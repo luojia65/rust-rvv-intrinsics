@@ -7,7 +7,7 @@ pub struct e32;
 pub struct e64;
 
 /// Set vl and vtype Function
-pub fn vsetvl<E, M>(avl: usize)
+pub fn vsetvl<E, M>(avl: usize) -> usize
 where
     (E, M): ValidConfig,
 {
@@ -15,7 +15,7 @@ where
 }
 
 /// Set vl and vtype Function
-pub fn vsetvlmax<E, M>()
+pub fn vsetvlmax<E, M>() -> usize
 where
     (E, M): ValidConfig,
 {
