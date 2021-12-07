@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 mod rvv_type;
 pub use rvv_type::*;
 mod config_setting;

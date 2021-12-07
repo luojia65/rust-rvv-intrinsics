@@ -9,9 +9,9 @@ fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
     while n > 0 {
         let vl = vsetvl::<e8, m8>(n);
         n -= vl;
-        let vs1 = vlv::<_, m8>(a_ptr, vl);
+        let vs1 = vlv::<u8, m8>(a_ptr, vl);
         a_ptr = unsafe { a_ptr.add(size_of::<u8>() * vl) };
-        let vs2 = vlv::<_, m8>(b_ptr, vl);
+        let vs2 = vlv::<u8, m8>(b_ptr, vl);
         b_ptr = unsafe { b_ptr.add(size_of::<u8>() * vl) };
         let vd = vaddvv(vs1, vs2, vl);
         vsv::<_, m8>(c_ptr, vd, vl);
