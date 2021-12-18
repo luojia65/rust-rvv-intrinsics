@@ -7,7 +7,7 @@ fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
     let mut b_ptr = b.as_ptr();
     let mut c_ptr = c.as_mut_ptr();
     while n > 0 {
-        let vl = vsetvl::<vint8mf8_t>(n);
+        let vl = vsetvl::<vuint8mf8_t>(n);
         n -= vl.as_bytes();
         unsafe {
             let vs1 = vlv(a_ptr, vl);
