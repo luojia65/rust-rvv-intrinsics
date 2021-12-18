@@ -1,8 +1,8 @@
-use crate::{ValidElemType, V};
+use crate::{Length, Vector};
 
-pub fn vaddvv<T, M>(op1: V<T, M>, op2: V<T, M>, vl: usize) -> V<T, M>
+pub fn vaddvv<V>(op1: V, op2: V, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }

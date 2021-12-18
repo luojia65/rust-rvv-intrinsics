@@ -1,110 +1,94 @@
-use crate::{ValidElemType, V};
+use crate::{Length, Vector};
 
 /// Vector Unit-Stride Load Function
-pub fn vlv<T, M>(base: *const T, vl: usize) -> V<T, M>
+pub fn vlv<V>(base: *const V::Element, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Unit-Stride Load Function
-pub fn vlvtu<T, M>(dest: V<T, M>, base: *const T, vl: usize) -> V<T, M>
+pub fn vlvtu<V>(dest: V, base: *const V::Element, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Unit-Stride Load Function
-pub fn vlvm<T, M>(
-    mask: <(T, M) as ValidElemType>::Mask,
-    maskedoff: V<T, M>,
-    base: *const T,
-    vl: usize,
-) -> V<T, M>
+pub fn vlvm<V>(mask: V::Mask, maskedoff: V, base: *const V::Element, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Unit-Stride Load Function
-pub fn vlvmt<T, M>(
-    mask: <(T, M) as ValidElemType>::Mask,
-    maskedoff: V<T, M>,
-    base: *const T,
-    vl: usize,
-    ta: usize,
-) -> V<T, M>
+pub fn vlvmt<V>(mask: V::Mask, maskedoff: V, base: *const V::Element, vl: Length<V>, ta: usize) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Unit-Stride Store Functions
-pub fn vsv<T, M>(base: *mut T, value: V<T, M>, vl: usize)
+pub fn vsv<V>(base: *mut V::Element, value: V, vl: Length<V>)
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Unit-Stride Store Functions
-pub fn vsvm<T, M>(
-    mask: <(T, M) as ValidElemType>::Mask,
-    base: *mut T,
-    value: V<T, M>,
-    vl: usize,
-) -> V<T, M>
+pub fn vsvm<V>(mask: V::Mask, base: *mut V::Element, value: V, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Strided Load Function
-pub fn vlsv<T, M>(base: *const T, bstride: isize, vl: usize) -> V<T, M>
+pub fn vlsv<V>(base: *const V::Element, bstride: isize, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Strided Load Function
-pub fn vlsvtu<T, M>(dest: V<T, M>, base: *const T, bstride: isize, vl: usize) -> V<T, M>
+pub fn vlsvtu<V>(dest: V, base: *const V::Element, bstride: isize, vl: Length<V>) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Strided Load Function
-pub fn vlsvm<T, M>(
-    mask: <(T, M) as ValidElemType>::Mask,
-    maskedoff: V<T, M>,
-    base: *const T,
+pub fn vlsvm<V>(
+    mask: V::Mask,
+    maskedoff: V,
+    base: *const V::Element,
     bstride: isize,
-    vl: usize,
-) -> V<T, M>
+    vl: Length<V>,
+) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
 
 /// Vector Strided Load Function
-pub fn vlsvmt<T, M>(
-    mask: <(T, M) as ValidElemType>::Mask,
-    maskedoff: V<T, M>,
-    base: *const T,
+pub fn vlsvmt<V>(
+    mask: V::Mask,
+    maskedoff: V,
+    base: *const V::Element,
     bstride: isize,
-    vl: usize,
+    vl: Length<V>,
     ta: usize,
-) -> V<T, M>
+) -> V
 where
-    (T, M): ValidElemType,
+    V: Vector,
 {
     todo!()
 }
