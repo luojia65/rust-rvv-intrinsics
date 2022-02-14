@@ -1,4 +1,3 @@
-use core::mem::size_of;
 use rust_rvv_intrinsics::*;
 
 fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
@@ -14,9 +13,9 @@ fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
             let vs2 = vlv(b_ptr, vl);
             let vd = vaddvv(vs1, vs2, vl);
             vsv(c_ptr, vd, vl);
-            a_ptr = a_ptr.add(size_of::<u8>() * vl.as_bytes());
-            b_ptr = b_ptr.add(size_of::<u8>() * vl.as_bytes());
-            c_ptr = c_ptr.add(size_of::<u8>() * vl.as_bytes());
+            a_ptr = a_ptr.add(vl.as_bytes());
+            b_ptr = b_ptr.add(vl.as_bytes());
+            c_ptr = c_ptr.add(vl.as_bytes());
         }
     }
 }
