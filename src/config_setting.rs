@@ -6,7 +6,13 @@ pub fn vsetvl<V>(avl: usize) -> Length<V>
 where
     V: Vector,
 {
+    arch_vsetvli::<0, 0>(avl);
     todo!()
+}
+
+#[inline]
+fn arch_vsetvli<const SEW: usize, const LMUL: usize>(avl: usize) -> usize {
+    unsafe { llvm_vsetvli(avl, SEW, LMUL) }
 }
 
 /// Set vl and vtype Function
@@ -17,6 +23,7 @@ where
     todo!()
 }
 
+/// Vector length configuration
 #[derive(Debug)]
 pub struct Length<V> {
     bytes: usize,
@@ -38,4 +45,9 @@ impl<V> Length<V> {
     pub fn as_bytes(&self) -> usize {
         self.bytes
     }
+}
+
+extern "C" {
+    #[link_name = "llvm.riscv.vsetvli"]
+    fn llvm_vsetvli(avl: usize, sew: usize, lmul: usize) -> usize;
 }

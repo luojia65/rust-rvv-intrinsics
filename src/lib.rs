@@ -1,4 +1,6 @@
 #![allow(unused_variables)]
+#![feature(link_llvm_intrinsics)]
+#![no_std]
 
 mod rvv_type;
 pub use rvv_type::*;

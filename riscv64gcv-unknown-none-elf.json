@@ -1,0 +1,18 @@
+{
+  "llvm-target": "riscv64-unknown-none",
+  "data-layout": "e-m:e-p:64:64-i64:64-i128:128-n64-S128",
+  "executables": true,
+  "linker-flavor": "ld.lld",
+  "cpu": "generic-rv64",
+  "target-endian": "little",
+  "target-pointer-width": "64",
+  "target-c-int-width": "64",
+  "arch": "riscv64",
+  "os": "none",
+  "features": "+m,+a,+f,+d,+c,+v",
+  "disable-redzone": true,
+  "panic-strategy": "abort",
+  "relocation-model": "static",
+  "atomic-cas": true,
+  "max-atomic-width": "64"
+}
