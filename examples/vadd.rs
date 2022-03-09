@@ -1,6 +1,6 @@
-#![no_std]
-#![no_main]
-#[panic_handler] fn on_panic(_: &core::panic::PanicInfo) -> ! { loop {} }
+// #![no_std]
+// #![no_main]
+// #[panic_handler] fn on_panic(_: &core::panic::PanicInfo) -> ! { loop {} }
 
 use rust_rvv_intrinsics::*;
 
@@ -24,8 +24,7 @@ fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
     }
 }
 
-#[no_mangle]
-pub extern "C" fn main() {
+pub fn main() {
     let src1 = [1, 2, 3, 4];
     let src2 = [5, 6, 7, 8];
     let mut dst = [0; 4];
