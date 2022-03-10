@@ -7,10 +7,8 @@ cargo build --example vadd --target riscv64gcv-unknown-none-elf.json -Z build-st
 cargo build --example vadd --target riscv64gcv-unknown-linux-gnu.json -Z build-std=std,panic_abort
 ```
 
-
-todo: following json only work on linux
+dump instrucions:
 
 ```
-  "linker": "riscv64-unknown-linux-gnu-gcc",
-  "linker-flavor": "gcc",
+riscv64-unknown-linux-gnu-objdump -d target/riscv64gcv-unknown-linux-gnu/debug/examples/vadd
 ```

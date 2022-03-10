@@ -1,7 +1,3 @@
-// #![no_std]
-// #![no_main]
-// #[panic_handler] fn on_panic(_: &core::panic::PanicInfo) -> ! { loop {} }
-
 use rust_rvv_intrinsics::*;
 
 fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
@@ -30,10 +26,3 @@ pub fn main() {
     let mut dst = [0; 4];
     add(&src1, &src2, &mut dst);
 }
-
-core::arch::global_asm!(
-    "_start:",
-    "li     sp, 0x88000000",
-    "tail   main",
-    "unimp",
-);
