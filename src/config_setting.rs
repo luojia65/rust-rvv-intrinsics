@@ -6,8 +6,8 @@ pub fn vsetvl<V>(avl: usize) -> Length<V>
 where
     V: Vector,
 {
-    arch_vsetvli::<0, 0>(avl);
-    todo!()
+    let bytes = arch_vsetvli::<0, 0>(avl);
+    Length { bytes, _marker: core::marker::PhantomData }
 }
 
 #[inline]

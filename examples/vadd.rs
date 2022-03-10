@@ -26,3 +26,7 @@ pub fn main() {
     let mut dst = [0; 4];
     add(&src1, &src2, &mut dst);
 }
+
+extern "C" {
+    
+}
