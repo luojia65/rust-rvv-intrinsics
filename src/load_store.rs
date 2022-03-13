@@ -64,7 +64,7 @@ pub(crate) mod masked {
     {
         todo!()
     }
-    
+
     /// Vector Unit-Stride Store Functions
     pub unsafe fn vsvm<V>(mask: V::Mask, base: *mut V::Element, value: V, vl: Length<V>) -> V
     where

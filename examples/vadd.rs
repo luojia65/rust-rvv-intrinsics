@@ -1,4 +1,4 @@
-use rust_rvv_intrinsics::*;
+use rust_rvv_intrinsics::{*, types::*};
 
 fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
     let mut n = N;
