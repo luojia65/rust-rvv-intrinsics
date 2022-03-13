@@ -1,5 +1,5 @@
 #![allow(non_camel_case_types)]
-use crate::Vector;
+use crate::rvv_type::Vector;
 
 /// Set vl and vtype Function
 pub fn vsetvl<V>(avl: usize) -> Length<V>
