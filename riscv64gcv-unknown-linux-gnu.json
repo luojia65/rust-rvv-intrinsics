@@ -18,12 +18,6 @@
   "target-endian": "little",
   "target-pointer-width": "64",
   "vendor": "unknown",
-  "pre-link-args": {
-    "gcc": [
-        "-mabi=lp64d",
-        "-Wl,--as-needed"
-    ]
-  },
   "has-rpath": true,
   "llvm-abiname": "lp64d",
   "dynamic-linking": true
