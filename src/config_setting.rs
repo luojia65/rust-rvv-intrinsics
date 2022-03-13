@@ -7,10 +7,11 @@ where
     V: Vector,
 {
     let sew = core::mem::size_of::<V::Mask>();
-    let bytes = unsafe {
-        llvm_vsetvli(avl, sew, 1)
-    }; // todo: grouping
-    Length { bytes, _marker: core::marker::PhantomData }
+    let bytes = unsafe { llvm_vsetvli(avl, sew, 1) }; // todo: grouping
+    Length {
+        bytes,
+        _marker: core::marker::PhantomData,
+    }
 }
 
 /// Set vl and vtype Function
@@ -19,10 +20,11 @@ where
     V: Vector,
 {
     let sew = core::mem::size_of::<V::Mask>();
-    let bytes = unsafe {
-        llvm_vsetvlimax(sew, 1)
-    }; // todo: grouping
-    Length { bytes, _marker: core::marker::PhantomData }
+    let bytes = unsafe { llvm_vsetvlimax(sew, 1) }; // todo: grouping
+    Length {
+        bytes,
+        _marker: core::marker::PhantomData,
+    }
 }
 
 /// Vector length configuration

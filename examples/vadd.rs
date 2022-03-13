@@ -27,6 +27,4 @@ pub fn main() {
     add(&src1, &src2, &mut dst);
 }
 
-extern "C" {
-    
-}
+extern "C" {}

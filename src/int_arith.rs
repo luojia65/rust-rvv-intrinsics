@@ -41,7 +41,55 @@ where
 }
 
 /// Negate all elements on vector
-pub fn vneg<V>(op: V, vl: Length<V>) -> V
+pub fn vnegv<V>(op: V, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Adds two vectors with mask
+pub fn vaddvvm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Adds a vector with a value on masked elements
+pub fn vaddvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Subtracts one vector by another vector with mask
+pub fn vsubvvm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Subtracts one vector by a value on masked element
+pub fn vsubvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Subtracts masked elements on one vector from a value
+pub fn vrsubvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: Vector,
+{
+    todo!()
+}
+
+/// Negate masked elements on vector
+pub fn vnegvm<V>(mask: V::Mask, maskedoff: V, op: V, vl: Length<V>) -> V
 where
     V: Vector,
 {

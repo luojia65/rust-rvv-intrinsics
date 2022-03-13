@@ -25,7 +25,13 @@ where
 }
 
 /// Vector Unit-Stride Load Function
-pub unsafe fn vlvmt<V>(mask: V::Mask, maskedoff: V, base: *const V::Element, vl: Length<V>, ta: usize) -> V
+pub unsafe fn vlvmt<V>(
+    mask: V::Mask,
+    maskedoff: V,
+    base: *const V::Element,
+    vl: Length<V>,
+    ta: usize,
+) -> V
 where
     V: Vector,
 {
