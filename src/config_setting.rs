@@ -6,13 +6,11 @@ pub fn vsetvl<V>(avl: usize) -> Length<V>
 where
     V: Vector,
 {
-    let bytes = arch_vsetvli::<0, 0>(avl);
+    let sew = core::mem::size_of::<V::Mask>();
+    let bytes = unsafe {
+        llvm_vsetvli(avl, sew, 1)
+    }; // todo: grouping
     Length { bytes, _marker: core::marker::PhantomData }
-}
-
-#[inline]
-fn arch_vsetvli<const SEW: usize, const LMUL: usize>(avl: usize) -> usize {
-    unsafe { llvm_vsetvli(avl, SEW, LMUL) }
 }
 
 /// Set vl and vtype Function
@@ -20,7 +18,11 @@ pub fn vsetvlmax<V>() -> Length<V>
 where
     V: Vector,
 {
-    todo!()
+    let sew = core::mem::size_of::<V::Mask>();
+    let bytes = unsafe {
+        llvm_vsetvlimax(sew, 1)
+    }; // todo: grouping
+    Length { bytes, _marker: core::marker::PhantomData }
 }
 
 /// Vector length configuration
@@ -50,4 +52,6 @@ impl<V> Length<V> {
 extern "C" {
     #[link_name = "llvm.riscv.vsetvli"]
     fn llvm_vsetvli(avl: usize, sew: usize, lmul: usize) -> usize;
+    #[link_name = "llvm.riscv.vsetvlimax"]
+    fn llvm_vsetvlimax(sew: usize, lmul: usize) -> usize;
 }
