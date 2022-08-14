@@ -8,8 +8,16 @@ where
     todo!()
 }
 
-/// Adds a vectors with a value on each element
+/// Adds a vector with value from variable on each element
 pub fn vaddvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Adds a vector with a constant value on each element
+pub fn vaddvi<V, const I: u8>(op: V, vl: Length<V>) -> V
 where
     V: IntVector,
 {
@@ -32,8 +40,16 @@ where
     todo!()
 }
 
-/// Subtracts elements on one vectors from a value
+/// Subtracts elements on one vectors from a value from variable
 pub fn vrsubvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Subtracts elements on one vectors from a constant value
+pub fn vrsubvi<V, const I: u8>(op: V, vl: Length<V>) -> V
 where
     V: IntVector,
 {

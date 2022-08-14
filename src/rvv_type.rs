@@ -6,11 +6,7 @@ pub trait Vector {
     type Mask;
 }
 
-pub trait IntVector {
-    type Element;
-    type Grouping;
-    type Mask;
-}
+pub trait IntVector: Vector {}
 
 pub struct mf8;
 pub struct mf4;
@@ -37,9 +33,7 @@ macro_rules! impl_vector_types {
     ((@integer $v: ident, $em: ident, $gr: ident, $m: ident)) => {
         impl_vector_types!((@default $v, $em, $gr, $m));
         impl IntVector for $v {
-            type Element = $em;
-            type Grouping = $gr;
-            type Mask = $m;
+
         }
     };
 }
