@@ -1,4 +1,4 @@
-use crate::{Length, rvv_type::Vector};
+use crate::{rvv_type::Vector, Length};
 
 /// Vector Unit-Stride Load Function
 pub unsafe fn vlv<V>(base: *const V::Element, vl: Length<V>) -> V
@@ -41,7 +41,7 @@ where
 }
 
 pub(crate) mod masked {
-    use crate::{Length, rvv_type::Vector};
+    use crate::{rvv_type::Vector, Length};
 
     /// Vector Unit-Stride Load Function
     pub unsafe fn vlvm<V>(mask: V::Mask, maskedoff: V, base: *const V::Element, vl: Length<V>) -> V
@@ -50,7 +50,7 @@ pub(crate) mod masked {
     {
         todo!()
     }
-    
+
     /// Vector Unit-Stride Load Function
     pub unsafe fn vlvmt<V>(
         mask: V::Mask,
@@ -101,5 +101,4 @@ pub(crate) mod masked {
     {
         todo!()
     }
-
 }

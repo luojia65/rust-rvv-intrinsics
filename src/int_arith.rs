@@ -1,99 +1,99 @@
-use crate::{Length, rvv_type::Vector};
+use crate::{rvv_type::IntVector, Length};
 
 /// Adds two vectors
 pub fn vaddvv<V>(op1: V, op2: V, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
-/// Adds a vector with a value on each element
+/// Adds a vectors with a value on each element
 pub fn vaddvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
-/// Subtracts one vector by another vector
+/// Subtracts one vectors by another vectors
 pub fn vsubvv<V>(op1: V, op2: V, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
-/// Subtracts one vector by a value on each element
+/// Subtracts one vectors by a value on each element
 pub fn vsubvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
-/// Subtracts elements on one vector from a value
+/// Subtracts elements on one vectors from a value
 pub fn vrsubvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
-/// Negate all elements on vector
+/// Negate all elements on vectors
 pub fn vnegv<V>(op: V, vl: Length<V>) -> V
 where
-    V: Vector,
+    V: IntVector,
 {
     todo!()
 }
 
 pub(crate) mod masked {
-    use crate::{Length, rvv_type::Vector};
+    use crate::{rvv_type::IntVector, Length};
     /// Adds two vectors with mask
     pub fn vaddvvm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
 
-    /// Adds a vector with a value on masked elements
+    /// Adds a vectors with a value on masked elements
     pub fn vaddvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
 
-    /// Subtracts one vector by another vector with mask
+    /// Subtracts one vectors by another vectors with mask
     pub fn vsubvvm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
 
-    /// Subtracts one vector by a value on masked element
+    /// Subtracts one vectors by a value on masked element
     pub fn vsubvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
 
-    /// Subtracts masked elements on one vector from a value
+    /// Subtracts masked elements on one vectors from a value
     pub fn vrsubvxm<V>(mask: V::Mask, maskedoff: V, op1: V, op2: V::Element, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
 
-    /// Negate masked elements on vector
+    /// Negate masked elements on vectors
     pub fn vnegvm<V>(mask: V::Mask, maskedoff: V, op: V, vl: Length<V>) -> V
     where
-        V: Vector,
+        V: IntVector,
     {
         todo!()
     }
