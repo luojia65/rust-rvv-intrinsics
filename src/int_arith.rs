@@ -139,6 +139,86 @@ where
     todo!()
 }
 
+/// Ands two vectors
+pub fn vandvv<V>(op1: V, op2: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Ands a vector with value from variable on each element
+pub fn vandvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Ands a vector with a constant value on each element
+pub fn vandvi<V, const I: u8>(op: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Ors two vectors
+pub fn vorvv<V>(op1: V, op2: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Ors a vector with value from variable on each element
+pub fn vorvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Ors a vector with a constant value on each element
+pub fn vorvi<V, const I: u8>(op: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Xors two vectors
+pub fn vxorvv<V>(op1: V, op2: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Xors a vector with value from variable on each element
+pub fn vxorvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Xors a vector with a constant value on each element
+pub fn vxorvi<V, const I: u8>(op: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
+/// Flips all bits in vector
+pub fn vnotv<V>(op: V, vl: Length<V>) -> V
+where
+    V: IntVector,
+{
+    todo!()
+}
+
 pub(crate) mod masked {
     use crate::{rvv_type::IntVector, Length};
     /// Adds two vectors with mask
