@@ -1,4 +1,7 @@
-use crate::{rvv_type::IntVector, Length};
+use crate::{
+    rvv_type::{IntVector, Widenable},
+    Length,
+};
 
 /// Adds two vectors
 pub fn vaddvv<V>(op1: V, op2: V, vl: Length<V>) -> V
@@ -60,6 +63,78 @@ where
 pub fn vnegv<V>(op: V, vl: Length<V>) -> V
 where
     V: IntVector,
+{
+    todo!()
+}
+
+/// Widening adds two vectors
+pub fn vwaddvv<V>(op1: V, op2: V, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Widening adds one vector and one value from variable
+pub fn vwaddvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Adds a vector to a widened vector
+pub fn vwaddwv<V>(op1: V::Wide, op2: V, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Adds one value from variable to a widened vector
+pub fn vwaddwx<V>(op1: V::Wide, op2: V::Element, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Widening subtracts one vector by another
+pub fn vwsubvv<V>(op1: V, op2: V, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Widening substracts one vector by one value from variable
+pub fn vwsubvx<V>(op1: V, op2: V::Element, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Substracts a widened vector by a vector
+pub fn vwsubwv<V>(op1: V::Wide, op2: V, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Substracts a widened vector by a value form variable
+pub fn vwsubwx<V>(op1: V::Wide, op2: V::Element, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
+{
+    todo!()
+}
+
+/// Widen a vector
+pub fn vwcvt<V>(op: V, vl: Length<V>) -> V::Wide
+where
+    V: Widenable,
 {
     todo!()
 }
