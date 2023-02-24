@@ -1,5 +1,7 @@
 #![allow(unused_variables)]
 #![feature(link_llvm_intrinsics)]
+#![feature(target_feature_11)]
+#![feature(riscv_target_feature)]
 #![no_std]
 
 mod config_setting;

@@ -2,6 +2,7 @@
 use crate::rvv_type::Vector;
 
 /// Set vl and vtype Function
+#[target_feature(enable = "v")]
 pub fn vsetvl<V>(avl: usize) -> Length<V>
 where
     V: Vector,
@@ -15,6 +16,7 @@ where
 }
 
 /// Set vl and vtype Function
+#[target_feature(enable = "v")]
 pub fn vsetvlmax<V>() -> Length<V>
 where
     V: Vector,
