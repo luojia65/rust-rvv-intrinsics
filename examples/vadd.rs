@@ -1,6 +1,6 @@
 use rust_rvv_intrinsics::{types::*, *};
 
-unsafe fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
+fn add<const N: usize>(a: &[u8; N], b: &[u8; N], c: &mut [u8; N]) {
     let mut n = N;
     let mut a_ptr = a.as_ptr();
     let mut b_ptr = b.as_ptr();
@@ -24,7 +24,7 @@ pub fn main() {
     let src1 = [1, 2, 3, 4];
     let src2 = [5, 6, 7, 8];
     let mut dst = [0; 4];
-    unsafe { add(&src1, &src2, &mut dst) };
+    add(&src1, &src2, &mut dst);
 }
 
 extern "C" {}
